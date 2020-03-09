@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::file('file', ['class'=>'form-control']) !!}
+                        {!! Form::file('photo_id', ['class'=>'form-control']) !!}
                     </div>
 
                     <div class="form-group row">
