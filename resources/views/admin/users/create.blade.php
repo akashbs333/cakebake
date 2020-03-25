@@ -47,7 +47,7 @@
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::submit('Create User', null, ['class'=>'form-control']) !!}
+                        {!! Form::submit('Create User', null, ['class'=>'form-control btn btn-success waves-effect btn-block']) !!}
                     </div>
 
                     {!! Form::close() !!}

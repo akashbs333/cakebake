@@ -60,8 +60,14 @@
                         <ul class="list-unstyled">
                             <li><a href="{{route('admin.user.index')}}">User List</a></li>
                             <li><a href="{{route('admin.user.create')}}">Create User</a></li>
-                            <li><a href="advanced-alertify.html">Alertify</a></li>
-                            <li><a href="advanced-rangeslider.html">Range Slider</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="has_sub">
+                        <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Products </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                        <ul class="list-unstyled">
+                            <li><a href="{{route('admin.products.index')}}">All Products</a></li>
+                            <li><a href="{{route('admin.products.create')}}">Create Product</a></li>
                         </ul>
                     </li>
 
@@ -283,19 +289,19 @@
                         <li class="list-inline-item dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
-                                <img src="{{asset('images/users/avatar-1.jpg')}}" alt="user" class="rounded-circle">
+                                <img src="{{ Auth::user()->photo ? Auth::user()->photo->file : asset('images/noimage.jpg')}}" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
-                                    <h5>Welcome</h5>
+                                    <h5>Welcome {{ Auth::user()->name }}</h5>
                                 </div>
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-account-circle m-r-5 text-muted"></i> Profile</a>
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-wallet m-r-5 text-muted"></i> My Wallet</a>
                                 <a class="dropdown-item" href="#"><span class="badge badge-success float-right">5</span><i class="mdi mdi-settings m-r-5 text-muted"></i> Settings</a>
                                 <a class="dropdown-item" href="#"><i class="mdi mdi-lock-open-outline m-r-5 text-muted"></i> Lock screen</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                                <a class="dropdown-item" href="{{ url('/logout') }}"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
                             </div>
                         </li>
 

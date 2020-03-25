@@ -25,6 +25,11 @@ class User extends Authenticatable
         return $this->belongsTo('App\Photo');
     }
 
+    public function products(){
+
+        return $this->hasMany('App\product');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -33,4 +38,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function isAdmin(){
+        if($this->role->name == "Admin" && $this->is_active == 1){
+            return true;
+        }
+        return false;
+    }
 }
