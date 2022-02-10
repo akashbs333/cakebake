@@ -9,7 +9,7 @@
     "gulp": "^3.9.1",
     "gulp-sass": "^3.2.1",
     "laravel-elixir": "^6.0.0-17",
-    "node-sass": "^4.13.1"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "node": "^8.10.0"
